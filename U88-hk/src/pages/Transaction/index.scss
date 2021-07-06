@@ -1,0 +1,62 @@
+.transaction {
+  width: 100vw;
+  height: 100vh;
+  padding: 0 20rem;
+
+  @media only screen and(max-width: 1200px) {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+
+  @media only screen and(max-width: 1500px) {
+    padding: 0 10rem;
+  }
+
+  @media only screen and(max-width: 760px) {
+    padding: 0 5rem;
+  }
+
+  @media only screen and(max-width: 480px) {
+    padding: 0 2.5rem;
+  }
+}
+
+.trans-tab {
+  margin-bottom: 2rem;
+}
+
+.transaction-card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0, 0.5rem, 0.8rem rgba(0, 0, 0, 0.2);
+  // margin-left: -100px;
+  // margin: 0 auto;
+
+  @media only screen and(max-width: 1200px) {
+    margin: 0 auto !important;
+  }
+
+  @media only screen and(max-width: 760px) {
+    margin: 0 auto !important;
+  }
+}
+
+.welcome_txt {
+  @media only screen and(max-width: 1200px) {
+    margin: 0 auto !important;
+  }
+}
+
+table {
+  border: 1px solid #d7e2f3 !important;
+}
+
+th,
+td {
+  border: 1px solid #d7e2f3 !important;
+}
+
+.theadTh {
+  font-weight: 400 !important;
+  color: '#646464';
+}

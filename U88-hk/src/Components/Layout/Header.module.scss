@@ -1,0 +1,119 @@
+header {
+  height: 20px;
+  max-width: 1140px;
+  margin: 0 auto;
+
+  @media screen and(max-width: 480px) {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .logo {
+    // background-image: url('../../Assets/logo_easy.png');
+    // background-position: left;
+    // background-repeat: no-repeat;
+    // background-size: 70%;
+    // height: 2rem;
+    // width: 13rem;
+    // margin-left: 15px;
+
+    background-image: url('../../Assets/u88/logo02.png');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    height: 4rem;
+    width: 15rem;
+    margin-left: 15px;
+
+    @media only screen and(max-width: 600px) {
+      // background-image: url('../../Assets/mstile-150x150.png');
+      background-image: url('../../Assets/u88/logo01.png');
+      margin-left: 0;
+      width: 6rem;
+      height: 4rem;
+
+      // background-position: -30% -80%;
+    }
+  }
+
+  .navList {
+    margin-left: auto;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+
+    @media only screen and(max-width: 767px) {
+      align-items: flex-end;
+    }
+
+    @media only screen and(max-width: 767px) {
+      align-items: flex-end;
+    }
+
+    @media only screen and(max-width: 480px) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .navLink:visited,
+  .navLink:link {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 4rem;
+
+    @media only screen and(max-width: 900px) {
+      margin: 0 3rem;
+    }
+
+    @media only screen and(max-width: 480px) {
+      margin: 0 2rem;
+    }
+
+    @media only screen and(max-width: 390px) {
+      margin: 0 1.5rem;
+    }
+
+    @media only screen and(max-width: 330px) {
+      margin: 0 1rem;
+    }
+
+    @media only screen and(max-width: 290px) {
+      font-size: 1px;
+    }
+
+    &:hover {
+      color: #ddd;
+    }
+  }
+}
+
+.header {
+  background-color: #242e47;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0;
+
+  @media only screen and(max-width: 600px) {
+    padding: 0 1rem;
+    text-align: left;
+    height: 4rem;
+  }
+
+  @media only screen and(max-width: 457px) {
+    padding: 0 1rem;
+    text-align: left;
+    height: 4rem;
+    font-size: 17px;
+  }
+
+  @media only screen and(max-width: 374px) {
+    padding: 0 10px;
+    text-align: left;
+    height: 4rem;
+    font-size: 14px;
+  }
+}
