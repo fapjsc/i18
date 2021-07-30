@@ -1,0 +1,48 @@
+.authBg {
+}
+
+.user-auth {
+  background-image: url(../../Assets/jp-img/bg_jp.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 15rem;
+  height: 100vh;
+
+  h4 {
+    font-size: 2.5rem;
+  }
+
+  @media only screen and(max-width: 500px) {
+  }
+
+  @media screen and (max-width: 1280px) and (max-height: 800px) {
+    padding-bottom: 20rem;
+    height: 100%;
+  }
+}
+
+.form-nav {
+  margin: 2rem 0 2rem 0;
+  padding: 2rem;
+}
+
+.form-link {
+  display: inline-block;
+  text-align: center;
+  padding-bottom: 17px;
+  font-size: 17px;
+  color: #707070;
+  border-bottom: 1px solid rgb(206, 201, 201);
+  width: 50%;
+}
+
+.isActive {
+  border-bottom: 2px solid #3f80fa;
+  width: 50%;
+  color: #3f80fa;
+}
+
+label {
+  font-size: 12px;
+}

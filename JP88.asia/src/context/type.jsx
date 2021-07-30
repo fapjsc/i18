@@ -1,0 +1,93 @@
+// Sell
+export const SET_RMB_SELL_RATE = 'SET_RMB_SELL_RATE';
+export const SET_ORDER_TOKEN = 'SET_ORDER_TOKEN';
+export const SET_WS_PAIRING = 'SET_WS_PAIRING';
+export const SET_WS_DATA = 'SET_WS_DATA';
+export const SET_SELL_COMPLETED = 'SET_SELL_COMPLETED';
+export const CLEAN_ORDER_TOKEN = 'CLEAN_ORDER_TOKEN';
+export const SET_WS_CLIENT = 'SET_WS_CLIENT';
+export const SET_CANCEL_ORDER_DATA = 'SET_CANCEL_ORDER_DATA';
+export const SET_CONFIRM_SELL = 'SET_CONFIRM_SELL';
+export const SET_SELL_STATUS = 'SET_SELL_STATUS';
+export const SET_RATE_DATA = 'SET_RATE_DATA';
+export const SET_TRANSFER_HANDLE = 'SET_TRANSFER_HANDLE';
+export const SET_SELL_COUNT = 'SET_SELL_COUNT';
+export const SET_SHOW_SELL_BANK = 'SET_SHOW_SELL_BANK';
+
+// Transfer
+export const SET_TRANSFER_ORDER_TOKEN = 'SET_TRANSFER_ORDER_TOKEN';
+export const SET_TRANSFER_STATUS = 'SET_TRANSFER_STATUS';
+export const SET_USDT_COUNT = 'SET_USDT_COUNT';
+export const SET_ORDER_DETAIL = 'SET_ORDER_DETAIL';
+export const GET_WS_CLIENT = 'GET_WS_CLIENT';
+
+// Balance
+export const SET_BALANCE = 'GET_BALANCE';
+export const SET_TICK = 'SET_TICK';
+
+// Chat
+export const SET_TRANSLATE = 'SET_TRANSLATE';
+export const SET_MESSAGES = 'SET_MESSAGES';
+export const SET_CHAT_WS_CLIENT = 'SET_CHAT_WS_CLIENT';
+export const CHAT_SET_ORDER_TOKEN = 'CHAT_SET_ORDER_TOKEN';
+export const SET_INSTANT_CLIENT = 'SET_INSTANT_CLIENT';
+export const SET_INSTANT_MESSAGES = 'SET_INSTANT_MESSAGES';
+export const SET_CHAT_LOADING = 'SET_CHAT_LOADING';
+export const SET_NEW_MESSAGE = 'SET_NEW_MESSAGE';
+
+// Auth
+export const IS_SEND_VALID_CODE = 'IS_SEND_VALID_CODE'; // 簡訊驗證碼發送情況
+export const SET_VALID_TOKEN = 'SET_VALID_TOKEN'; // 確認驗證碼正確後回傳的token
+export const SET_AUTH_LOADING = 'SET_AUTH_LOADING';
+export const SHOW_ERROR_MODAL = 'SHOW_ERROR_MODAL';
+export const REMOVE_VALID_TOKEN = 'REMOVE_VALID_TOKEN';
+export const SET_EXPIRED_TIME = 'SET_EXPIRED_TIME';
+export const SET_AGENT = 'SET_AGENT';
+export const SET_ACCOUNT_EXISTS = 'SET_ACCOUNT_EXISTS';
+
+// History
+export const SET_ALL_HISTORY = 'SET_ALL_HISTORY';
+export const SET_SINGLE_DETAIL = 'SET_SINGLE_DETAIL';
+export const SET_WAIT_HISTORY = 'SET_WAIT_HISTORY';
+export const HISTORY_LOADING = 'HISTORY_LOADING';
+
+// Login
+export const LOGIN_SET_LOADING = 'LOGIN_SET_LOADING';
+export const SET_ERROR_TEXT = 'SET_ERROR_TEXT';
+
+// Http Error
+export const SET_HTTP_ERROR = 'SET_HTTP_ERROR';
+export const SET_HTTP_LOADING = 'SET_HTTP_LOADING';
+export const SET_BUTTON_LOADING = 'SET_BUTTON_LOADING';
+
+// Buy
+export const BUY_BTN_LOADING = 'BUY_BTN_LOADING';
+export const SET_BUY_COUNT = 'SET_BUY_COUNT';
+export const SET_BUY_ERROR_TEXT = 'SET_BUY_ERROR_TEXT';
+export const SET_BUY_ORDER_TOKEN = 'SET_BUY_ORDER_TOKEN';
+export const SET_BUY_WS_STATUS = 'SET_BUY_WS_STATUS';
+export const HANDLE_PAIRING = 'HANDLE_PAIRING';
+export const SET_SHOW_BANK = 'SET_SHOW_BANK';
+export const SET_BUY_WS_CLIENT = 'SET_BUY_WS_CLIENT';
+export const SET_BUY_WS_DATA = 'SET_BUY_WS_DATA';
+export const SET_DELTA_TIME = 'SET_DELTA_TIME';
+export const HIDE_BUY_INFO = 'HIDE_BUY_INFO';
+
+// Instant
+export const SET_INSTANT_WS_DATA = 'SET_INSTANT_WS_DATA';
+export const CLEAN_INSTANT_DATA = 'CLEAN_INSTANT_DATA';
+export const SET_COUNT_DATA = 'SET_COUNT_DATA';
+export const SET_SELL1_DATA = 'SET_SELL1_DATA';
+export const SET_BUY1_DATA = 'SET_BUY1_DATA';
+export const INSTANT_ALL_WS_CLIENT = 'INSTANT_ALL_WS_CLIENT'; // instant all client
+export const INSTANT_ON_GOING_WS_CLIENT = 'INSTANT_ON_GOING_WS_CLIENT'; // instant on going client
+export const SET_STATUS_WS_CLIENT = 'SET_STATUS_WS_CLIENT'; // 確認狀態的client
+export const SET_WS_STATUS_DATA = 'SET_WS_STATUS_DATA';
+export const SET_INSTANT_ONGOING_DATA = 'SET_INSTANT_ONGOING_DATA';
+export const SET_ACTION_TYPE = 'SET_ACTION_TYPE';
+export const ORDER_NOT_EXISTS = 'ORDER_NOT_EXISTS';
+export const SET_PAYMENT_NAME = 'SET_PAYMENT_NAME';
+
+// Wallet
+export const SET_WALLET_DATA = 'SET_WALLET_DATA';
+export const SET_WALLET_TYPE = 'SET_WALLET_TYPE';
