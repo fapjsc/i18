@@ -4,6 +4,12 @@ import { useI18n } from '../../lang';
 // Components
 import StopWatch from '../universal/StopWatch';
 
+const thousandBitSeparator = num => {
+  let parts = num.toString().split('.');
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  return parts.join('.');
+};
+
 const InstantAllItem = ({ el, handleClick }) => {
   // Lang Context
   const { t } = useI18n();
@@ -39,7 +45,7 @@ const InstantAllItem = ({ el, handleClick }) => {
             <div className="w-50">
               <span className="i_cny" />
               <span className="mobile-text-md">
-                {t('instant_pay')}&nbsp;{el.D2.toFixed(2)} {t('currency')}
+                {t('instant_pay')}&nbsp;{thousandBitSeparator(el.D2)} {t('currency')}
               </span>
             </div>
           </div>
@@ -48,7 +54,7 @@ const InstantAllItem = ({ el, handleClick }) => {
 
           {/* Button */}
           <div className="col-md-3 col-12 px-0 mobile-marginTop mw400 mx-auto">
-            <button onClick={() => handleClick(el.D1.toFixed(2), el.D2.toFixed(2), el.UsdtAmt, '買', el.token)} className="easy-btn margin0 w-100">
+            <button onClick={() => handleClick(el.D1, el.D2, el.UsdtAmt, '買', el.token)} className="easy-btn margin0 w-100">
               {t('btn_detail')}
             </button>
           </div>
@@ -84,7 +90,7 @@ const InstantAllItem = ({ el, handleClick }) => {
             <div className="w-50">
               <span className="i_cny" />
               <span className="mobile-text-md">
-                {t('instant_get')}&nbsp;{el.D2.toFixed(2)} {t('currency')}
+                {t('instant_get')}&nbsp;{thousandBitSeparator(el.D2)} {t('currency')}
               </span>
             </div>
           </div>

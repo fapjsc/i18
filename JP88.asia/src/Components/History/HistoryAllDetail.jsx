@@ -41,13 +41,25 @@ const HistoryAllDetail = props => {
     }
   };
 
+  const thousandBitSeparator = num => {
+    let parts = num.toString().split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return parts.join('.');
+  };
+
   return (
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter" size="md" centered>
       <Modal.Header style={{ borderBottom: 'none' }}>
         <div style={headerTitle} className="">
           <img className="" style={iconStyle} src={singleDetail.type === 0 ? blueIcon : singleDetail.type === 1 ? redIcon : purpleIcon} alt="status icon" />
           <p style={textStyle} className={singleDetail.type === 0 ? 'txt14' : singleDetail.type === 1 ? 'txt14_r' : 'txt14_p'}>
-            {singleDetail.type === 0 ? t('history_buy') : singleDetail.type === 1 ? t('history_sell') : singleDetail.type === 2 ? t('history_transfer_out') : t('history_transfer_in')}
+            {singleDetail.type === 0
+              ? t('history_buy')
+              : singleDetail.type === 1
+              ? t('history_sell')
+              : singleDetail.type === 2
+              ? t('history_transfer_out')
+              : t('history_transfer_in')}
           </p>
         </div>
       </Modal.Header>
@@ -104,7 +116,7 @@ const HistoryAllDetail = props => {
               <div style={gridContent9}>
                 {/* <p className="txt_12_grey mb-0">{t('history_RMB')}</p> */}
                 <p className="txt_12_grey mb-0">{t('history_currency')}</p>
-                <p className="mb-0">{singleDetail.rmb && singleDetail.rmb.toFixed(2)}</p>
+                <p className="mb-0">{singleDetail.rmb && thousandBitSeparator(Math.round(singleDetail.rmb))}</p>
               </div>
 
               <div style={gridContent10}>

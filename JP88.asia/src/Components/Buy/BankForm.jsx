@@ -91,18 +91,25 @@ const BankFrom = () => {
 
   // 換算千分位
   const thousandBitSeparator = num => {
-    return (
-      num &&
-      // eslint-disable-next-line
-      (num.toString().indexOf('.') != -1
-        ? num.toString().replace(/(\d)(?=(\d{3})+\.)/g, function ($0, $1) {
-            return $1 + ',';
-          })
-        : num.toString().replace(/(\d)(?=(\d{3}))/g, function ($0, $1) {
-            return $1 + ',';
-          }))
-    );
+    let parts = num.toString().split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return parts.join('.');
   };
+
+  // 換算千分位 origin
+  //  const thousandBitSeparator = num => {
+  //   return (
+  //     num &&
+  //     // eslint-disable-next-line
+  //     (num.toString().indexOf('.') !== -1
+  //       ? num.toString().replace(/(\d)(?=(\d{3})+\.)/g, function ($0, $1) {
+  //           return $1 + ',';
+  //         })
+  //       : num.toString().replace(/(\d)(?=(\d{3}))/g, function ($0, $1) {
+  //           return $1 + ',';
+  //         }))
+  //   );
+  // };
   return (
     <>
       <Form className="confirmBuyContent">
@@ -160,7 +167,7 @@ const BankFrom = () => {
                 <div className="">
                   <p className="txt_12_grey mb-0">{t('buy_total')}</p>
                   <p className="confirmBuy-text c_blue mb-0">
-                    {thousandBitSeparator(Number(buyCount.rmb).toFixed(2).toString())}
+                    {thousandBitSeparator(Number(buyCount.rmb).toFixed(0).toString())}
                     &nbsp; {t('currency')}
                   </p>
                 </div>

@@ -101,6 +101,12 @@ const BuyDetail = () => {
     cleanAll();
   };
 
+  const thousandBitSeparator = num => {
+    let parts = num.toString().split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return parts.join('.');
+  };
+
   return (
     <div className="row mt-4">
       <div className="col-xl-8 col-12">
@@ -177,7 +183,7 @@ const BuyDetail = () => {
                           <div>
                             <p className="txt_12_grey mb-0 ">{t('instant_price')}</p>
                             <p className="c_blue ">
-                              {buy1Data.D2.toFixed(2)} {t('currency')}
+                              {thousandBitSeparator(buy1Data.D2)} {t('currency')}
                             </p>
                           </div>
 

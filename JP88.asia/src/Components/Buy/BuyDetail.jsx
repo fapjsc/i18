@@ -54,6 +54,12 @@ const InfoDetail = props => {
     }
   };
 
+  const thousandBitSeparator = num => {
+    let parts = num.toString().split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return parts.join('.');
+  };
+
   useEffect(() => {
     GetDeltaTime(match.params.id);
     return () => {
@@ -92,7 +98,7 @@ const InfoDetail = props => {
                       fontWeight: 'bold',
                     }}
                   >
-                    {Number(buyWsData.cny).toFixed(2)}
+                    {thousandBitSeparator(Number(buyWsData.cny).toFixed(0))}
                     {t('currency')}
                   </span>
                 </p>
@@ -146,7 +152,11 @@ const InfoDetail = props => {
 
           <Row className="justify-content-center">
             <Col className="mw400 text-center">
-              <Button disabled={buyBtnLoading} className={buyBtnLoading ? 'disable-easy-btn w-100' : 'easy-btn w-100'} onClick={() => BuyerAlreadyPay(buyOrderToken)}>
+              <Button
+                disabled={buyBtnLoading}
+                className={buyBtnLoading ? 'disable-easy-btn w-100' : 'easy-btn w-100'}
+                onClick={() => BuyerAlreadyPay(buyOrderToken)}
+              >
                 {buyBtnLoading && <Spinner animation="grow" variant="danger" />}
                 {buyBtnLoading ? `${t('btn_loading')}...` : t('btn_already_pay')}
               </Button>

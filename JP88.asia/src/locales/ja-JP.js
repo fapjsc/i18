@@ -231,7 +231,7 @@ export default {
   btn_continue: '続ける',
   btn_confirm: '確定',
   btn_return: '戻る',
-  btn_pair_start: 'ペアリング開始',
+  btn_pair_start: '送信',
   btn_pairing: 'ペアリング接続中',
   btn_loading: '処理中',
   btn_already_pay: '支払いが完了しました',
@@ -319,7 +319,7 @@ export default {
 
   // Form Text
   please_enter_quantity: '購入数量を入力してください',
-  account_name_placeholder: 'カードの名義人の名前を入力してください',
+  account_name_placeholder: '振込名義人',
   account_name_prompt: '*振込銀行のカード名義人の実名を入力してください',
   buy_total: '合計金額',
   buy_quantity: '数量',
@@ -419,8 +419,10 @@ export default {
   // Form Footer
   form_footer_text_1: '本プラットフォームは現在USDTのみを提供し、他の仮想通貨は受け入れられません。',
   form_footer_text_2: 'このプラットフォームのウォレットアドレスの入金または出金は、USDTブロックチェーンシステムを介して確認されます。',
-  form_footer_text_3: '本プラットフォームのウォレットアドレスは、入金または出金を繰り返し使用することができます。システムが更新された場合は、Webサイトまたはメッセージでお知らせします。',
-  form_footer_text_4: 'USDT以外の仮想通貨を当社のウォレットアドレスに入金しないでください。入金した場合は、お客様の資産の取り返しはできませんので、ご注意ください。',
+  form_footer_text_3:
+    '本プラットフォームのウォレットアドレスは、入金または出金を繰り返し使用することができます。システムが更新された場合は、Webサイトまたはメッセージでお知らせします。',
+  form_footer_text_4:
+    'USDT以外の仮想通貨を当社のウォレットアドレスに入金しないでください。入金した場合は、お客様の資産の取り返しはできませんので、ご注意ください。',
   form_footer_text_5: '最低入金額：100USDT、最低額未満の入金はアカウントに入金されず、返金できません。',
   form_footer_text_6: '情報の改ざんや漏洩を防ぐため、パソコンやブラウザのセキュリティを必ずご確認ください。',
   form_footer_text_7: 'その他の質問や紛争の要件がある場合、Webサイトのカスタマーサポートにご連絡ください。',

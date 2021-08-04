@@ -61,7 +61,8 @@ const Sell = () => {
         show={wsPairing && wsClient}
         onHide={onHide}
         title={t('pair_title')}
-        text={wsData && `${t('pair_text')}：${Math.abs(wsData.UsdtAmt).toFixed(2)} USDT = $${wsData.D2.toFixed(2)} ${t('currency')}`}
+        // text={wsData && `${t('pair_text')}：${Math.abs(wsData.UsdtAmt).toFixed(2)} USDT = $${wsData.D2.toFixed(2)} ${t('currency')}`}
+        text={wsData && `${t('pair_text')}：${Math.abs(wsData.UsdtAmt).toFixed(0)} USDT = $${wsData.D2} ${t('currency')}`}
       />
     </Fragment>
   );

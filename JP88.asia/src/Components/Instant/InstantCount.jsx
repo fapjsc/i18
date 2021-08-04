@@ -61,6 +61,12 @@ const InstantCount = props => {
     history.replace('/home/overview');
   };
 
+  const thousandBitSeparator = num => {
+    let parts = num.toString().split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return parts.join('.');
+  };
+
   return (
     <div id="buy" className="tabcontent">
       {countData && <NoOrder show={!orderExists} exRate={countData.exRate} type={countData.type} usdt={countData.usdt.toFixed(2)} onHide={onHide} />}
@@ -84,7 +90,7 @@ const InstantCount = props => {
             <div className="inline ">
               <div className="txt_12_grey mobile-text">{t('instant_price')}</div>
               <span className="c_blue mobile-text">
-                {countData.cny} {t('currency')}
+                {thousandBitSeparator(Number(countData.cny).toFixed(0))} {t('currency')}
               </span>
             </div>
 
@@ -96,7 +102,12 @@ const InstantCount = props => {
             </div>
           </div>
 
-          <Button onClick={() => handleClick(countData.type)} disabled={props.showPop} className="easy-btn mw400 btn-sm-screen-100" style={{ marginTop: '4rem', marginBottom: '4rem' }}>
+          <Button
+            onClick={() => handleClick(countData.type)}
+            disabled={props.showPop}
+            className="easy-btn mw400 btn-sm-screen-100"
+            style={{ marginTop: '4rem', marginBottom: '4rem' }}
+          >
             {t('btn_instant')}
           </Button>
         </>

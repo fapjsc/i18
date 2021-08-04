@@ -26,6 +26,12 @@ const InstantOnGoingItem = ({ el, handleClick, btnLoading }) => {
     setOverTime(true);
   };
 
+  const thousandBitSeparator = num => {
+    let parts = num.toString().split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return parts.join('.');
+  };
+
   useEffect(() => {
     if (el.DeltaTime > 1800) setOverTime(true);
   }, [el.DeltaTime]);
@@ -67,7 +73,7 @@ const InstantOnGoingItem = ({ el, handleClick, btnLoading }) => {
             <div className="w-50">
               <span className="i_cny" />
               <span className="mobile-text-md">
-                {t('instant_pay')}&nbsp;{el.D2.toFixed(2)} {t('currency')}
+                {t('instant_pay')}&nbsp;{thousandBitSeparator(el.D2)} {t('currency')}
               </span>
             </div>
           </div>
@@ -117,7 +123,7 @@ const InstantOnGoingItem = ({ el, handleClick, btnLoading }) => {
             <div className="w-50">
               <span className="i_cny" />
               <span className="mobile-text-md">
-                {t('instant_get')}&nbsp;{el.D2.toFixed(2)} {t('currency')}
+                {t('instant_get')}&nbsp;{thousandBitSeparator(el.D2)} {t('currency')}
               </span>
             </div>
           </div>

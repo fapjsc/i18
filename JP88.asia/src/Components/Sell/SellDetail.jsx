@@ -46,6 +46,12 @@ const SellDetail = () => {
   const [isClick, setIsClick] = useState(false);
   const [overTime, setOverTime] = useState(false);
 
+  const thousandBitSeparator = num => {
+    let parts = num.toString().split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return parts.join('.');
+  };
+
   // ===========
   //  UseEffect
   // ===========
@@ -115,7 +121,7 @@ const SellDetail = () => {
                     fontWeight: 'bold',
                   }}
                 >
-                  {wsData && wsData.D2.toFixed(2) + ` ${t('currency')}`}
+                  {wsData && thousandBitSeparator(wsData.D2) + ` ${t('currency')}`}
                 </span>
               </p>
               <p>

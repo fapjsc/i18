@@ -97,7 +97,8 @@ const SellForm = () => {
         return;
       }
 
-      let counter = (e.target.value * exRate).toFixed(2);
+      // let counter = (e.target.value * exRate).toFixed(2);
+      let counter = Math.round(e.target.value * exRate);
       setCny({
         val: counter,
         isValid: true,
@@ -143,7 +144,7 @@ const SellForm = () => {
     await getBalance();
 
     let usdtCount = Number(avb).toFixed(2);
-    let cnyCount = (usdtCount * Number(exRate)).toFixed(2);
+    let cnyCount = Math.round(usdtCount * Number(exRate));
 
     if (usdtCount <= 0) {
       usdtCount = 0;
@@ -181,11 +182,11 @@ const SellForm = () => {
       setFormValid(false);
     }
 
-    if (usdt.val === '' || usdt.val <= 0) {
+    if (usdt.val === '' || usdt.val < 100 || usdt.val > 10000) {
       setUsdt({
         val: '',
         isValid: false,
-        error: t('sell_error_invalid_number'),
+        error: t('sell_invalid_number'),
       });
 
       setFormValid(false);
@@ -195,7 +196,7 @@ const SellForm = () => {
       setCny({
         val: '',
         isValid: false,
-        error: t('sell_error_invalid_number'),
+        error: t('sell_invalid_number'),
       });
 
       setFormValid(false);
@@ -207,7 +208,7 @@ const SellForm = () => {
       setUsdt({
         val: '',
         isValid: false,
-        error: t('sell_error_invalid_number'),
+        error: t('sell_invalid_number'),
       });
 
       setCny({

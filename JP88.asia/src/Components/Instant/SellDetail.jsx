@@ -113,6 +113,13 @@ const SellDetail = () => {
     setOvertime2(true);
   };
 
+  // 換算千分位
+  const thousandBitSeparator = num => {
+    let parts = num.toString().split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return parts.join('.');
+  };
+
   const backToHome = () => {
     if (wsStatusClient) wsStatusClient.close();
     history.replace('/home/overview');
@@ -190,7 +197,7 @@ const SellDetail = () => {
                           <div>
                             <p className="txt_12_grey mb-0">{t('instant_price')}</p>
                             <p className="c_blue">
-                              {sell1Data.D2.toFixed(2)} {t('currency')}
+                              {thousandBitSeparator(sell1Data.D2)} {t('currency')}
                             </p>
                           </div>
                           <div>

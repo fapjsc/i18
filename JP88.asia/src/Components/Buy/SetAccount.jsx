@@ -11,33 +11,40 @@ const SetAccount = props => {
   // Lang Context
   const { t } = useI18n();
 
+  // 千分位加逗號 (有小數點才能用)
+  // const thousandBitSeparator = num => {
+  //   return (
+  //     num &&
+  //     // eslint-disable-next-line
+  //     (num.toString().indexOf('.') != -1
+  //       ? num.toString().replace(/(\d)(?=(\d{3})+\.)/g, function ($0, $1) {
+  //           return $1 + ',';
+  //         })
+  //       : num.toString().replace(/(\d)(?=(\d{3}))/g, function ($0, $1) {
+  //           return $1 + ',';
+  //         }))
+  //   );
+  // };
+
   // 千分位加逗號
   const thousandBitSeparator = num => {
-    return (
-      num &&
-      // eslint-disable-next-line
-      (num.toString().indexOf('.') != -1
-        ? num.toString().replace(/(\d)(?=(\d{3})+\.)/g, function ($0, $1) {
-            return $1 + ',';
-          })
-        : num.toString().replace(/(\d)(?=(\d{3}))/g, function ($0, $1) {
-            return $1 + ',';
-          }))
-    );
+    let parts = num.toString().split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return parts.join('.');
   };
 
   return (
     <Row style={confirmBuyTextBox} className="px-2 justify-content-between pl-4">
       <Col className="pl-0" xl={12} lg={12} sm={12}>
-        <p className="txt_12_grey mb-0">{t('buy_total')}</p>
+        <p className="txt_10_grey mb-0">{t('buy_total')}</p>
         <p className="c_blue">
-          {thousandBitSeparator(Number(props.rmbAmt).toFixed(2).toString())}
+          {thousandBitSeparator(Number(props.rmbAmt).toFixed(0).toString())}
           &nbsp; {t('currency')}
         </p>
       </Col>
 
       <Col className="pl-0" xl={12} lg={12} sm={12}>
-        <p className="txt_12_grey mb-0">{t('buy_quantity')}</p>
+        <p className="txt_10_grey mb-0">{t('buy_quantity')}</p>
         <p className=" mb-0">
           {/* 小數第二位，千分逗號 */}
           {thousandBitSeparator(Number(props.usdtAmt).toFixed(2).toString())}

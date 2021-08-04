@@ -24,7 +24,7 @@ const Paring = props => {
           <img src={searchIcon} alt="icon" className="" />
           <h3 style={{ color: '#3F80FA' }}>{t('please_wait')}</h3>
           <p>
-            {t('buy_order')}：{Number(props.usdt).toFixed(2)} USDT = ${Number(props.rmb).toFixed(2)} {t('currency')}
+            {t('buy_order')}：{Number(props.usdt).toFixed(2)} USDT = ${Number(props.rmb).toFixed(0)} {t('currency')}
           </p>
         </div>
       </Modal.Body>
