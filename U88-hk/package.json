@@ -60,5 +60,9 @@
   "devDependencies": {
     "http-proxy-middleware": "^1.3.1"
   },
-  "proxy": "https://www.k100u.com"
+  "proxy": "https://www.k100u.com",
+  "description": "https://www.u88.asia/",
+  "main": "setupProxy.js",
+  "author": "",
+  "license": "ISC"
 }
